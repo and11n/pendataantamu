@@ -59,3 +59,6 @@ Route::middleware(['auth', 'auth.admin', 'revalidate'])->group(function () {
     Route::post('/admin/mapel/update', [MapelController::class, 'update'])->name('update.mapel');
     Route::get('/admin/mapel/delete/{nama}', [MapelController::class, 'destroy'])->name('delete.mapel');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
